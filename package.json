@@ -1,5 +1,5 @@
 {
-  "name": "tailwindcss-hero-patterns",
+  "name": "@rozsazoltan/tailwindcss-patterns",
   "version": "1.0.0",
   "description": "Tailwind CSS plugin to use Hero Patterns via pattern-* utility",
   "author": {
@@ -22,5 +22,8 @@
     "hero-patterns"
   ],
   "main": "./src/index.js",
-  "type": "module"
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  }
 }

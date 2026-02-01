@@ -1,13 +1,13 @@
 # Tailwind CSS Patterns
 
-[![npm](https://img.shields.io/npm/v/tailwindcss-hero-patterns)](https://www.npmjs.com/package/rozsazoltan/tailwindcss-patterns)
+[![npm](https://img.shields.io/npm/v/tailwindcss-hero-patterns)](https://www.npmjs.com/package/@rozsazoltan/tailwindcss-patterns)
 
 
 A simple tailwind plugin to display [Hero Patterns](http://www.heropatterns.com/).
 
 ## Installation
 
-`npm i rozsazoltan/tailwindcss-patterns`
+`npm i @rozsazoltan/tailwindcss-patterns`
 
 ### TailwindCSS v4
 
@@ -15,15 +15,18 @@ A simple tailwind plugin to display [Hero Patterns](http://www.heropatterns.com/
 ```css
 @import "tailwindcss";
   
-@plugin "rozsazoltan/tailwindcss-patterns";
+@plugin "@rozsazoltan/tailwindcss-patterns";
 ```
 
 ### TailwindCSS v3
 
+> [!WARNING]
+> It is important to note that the package has been rewritten in ESM, so it works exclusively in ESM environments. You will need to use `postcss.config.mjs` and `tailwind.config.mjs`; or declare `"type": "module"` in your `package.json`.
+
 **tailwindcss.config.ts**
 ```js
 import type { Config } from 'tailwindcss'
-import patternsPlugin from 'rozsazoltan/tailwindcss-patterns'
+import patternsPlugin from '@rozsazoltan/tailwindcss-patterns'
 
 export default {
   content: [],
