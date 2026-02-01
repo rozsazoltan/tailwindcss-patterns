@@ -1,13 +1,13 @@
 import plugin from 'tailwindcss/plugin';
-import heroPatterns from './patterns.js';
+import patterns from './patterns.js';
 
 export default plugin(
   ({ addUtilities, theme }) => {
-    const allowedShades = theme('heroPatternsShades', []);
-    const allowedColors = theme('heroPatternsColors', []);
-    const allowedOpacities = theme('heroPatternsOpacities', ['10', '50', '90']);
+    const allowedShades = theme('patternsShades', []);
+    const allowedColors = theme('patternsColors', []);
+    const allowedOpacities = theme('patternsOpacities', ['10', '50', '90']);
 
-    const patterns = theme('heroPatterns', {});
+    const patterns = theme('patterns', {});
     const colors = theme('colors', {});
     const opacity = Object.fromEntries(
       Object.entries(theme('opacity', {})).filter(
@@ -37,13 +37,13 @@ export default plugin(
         const encodedColor = color.toString().replace('#', '%23');
         const coloredPattern = pattern.replace('{{color}}', encodedColor);
 
-        newUtilities[`.heropattern-${patternName}-${colorName}`] = {
+        newUtilities[`.pattern-${patternName}-${colorName}`] = {
           backgroundImage: coloredPattern.replace('{{opacity}}', 1),
         };
 
         for (const [opacityName, opacityValue] of Object.entries(opacity)) {
           newUtilities[
-            `.heropattern-${patternName}-${colorName}\\/${opacityName}`
+            `.pattern-${patternName}-${colorName}\\/${opacityName}`
           ] = {
             backgroundImage: coloredPattern.replace(
               '{{opacity}}',
@@ -58,7 +58,7 @@ export default plugin(
   },
   {
     theme: {
-      heroPatterns,
+      patterns,
     },
   }
 );
